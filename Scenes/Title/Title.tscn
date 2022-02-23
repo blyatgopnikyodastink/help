@@ -3,7 +3,7 @@
 [ext_resource path="res://Resources/TitleTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/Title/Title.gd" type="Script" id=2]
 
-[node name="Title" type="Control"]
+[node name="Title" type="Control" groups=["scene_changer"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TesiferX.png-c861b408d2c30daf82be3feca07d58f6.stex"
+path="res://.import/DirtPath.png-6b28e173013c0d427ad6f0184241c6d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/TesiferX.png"
-dest_files=[ "res://.import/TesiferX.png-c861b408d2c30daf82be3feca07d58f6.stex" ]
+source_file="res://Sprites/World/DirtPath.png"
+dest_files=[ "res://.import/DirtPath.png-6b28e173013c0d427ad6f0184241c6d5.stex" ]
 
 [params]
 

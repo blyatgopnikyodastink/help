@@ -8,16 +8,23 @@ var cur_scene: Node
 
 func _ready() -> void:
 	change_scene(TITLE)
-	
 
-func change_scene(to: String) -> void:
-	call_deferred("change_scene_deferred", to)
-	
 
-func change_scene_deferred(to: String) -> void:
+func change_scene(to: String, direction := Vector2.ZERO) -> void:
+	var new_scene: Node = load(to).instance()
+	add_child(new_scene)
 	if cur_scene:
-		cur_scene.free()
-	cur_scene = load(to).instance()
-	add_child(cur_scene)
-	if cur_scene.has_signal("change_scene"):
-		cur_scene.connect("change_scene", self, "change_scene")
+		if cur_scene is GameWorld and new_scene is GameWorld:
+			cur_scene.free()
+			cur_scene = new_scene
+			$MainCam.target_player()
+			print("test")
+		else:
+			cur_scene.free()
+			cur_scene = new_scene
+			if new_scene is GameWorld:
+				$MainCam.target_player()
+	else:
+		cur_scene = new_scene
+	for scene_changer in get_tree().get_nodes_in_group("scene_changer"):
+		scene_changer.connect("change_scene", self, "change_scene", [], CONNECT_DEFERRED)

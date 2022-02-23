@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_NewGame_pressed() -> void:
-	emit_signal("change_scene", "res://Scenes/World/World.tscn")
+	emit_signal("change_scene", "res://Scenes/World/Test1.tscn")
 
 
 func _on_LoadFile_pressed() -> void:

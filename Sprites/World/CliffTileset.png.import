@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Finalfer2.png-34a540eebdd272f7b04e474ee0090177.stex"
+path="res://.import/CliffTileset.png-cb6b067a1b8ef618518cb89777c45c1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/Finalfer2.png"
-dest_files=[ "res://.import/Finalfer2.png-34a540eebdd272f7b04e474ee0090177.stex" ]
+source_file="res://Sprites/World/CliffTileset.png"
+dest_files=[ "res://.import/CliffTileset.png-cb6b067a1b8ef618518cb89777c45c1c.stex" ]
 
 [params]
 

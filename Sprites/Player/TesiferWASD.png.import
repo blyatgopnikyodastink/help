@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DirtPath.png-830d51c91a473e9befa2cbc27c4a0426.stex"
+path="res://.import/TesiferWASD.png-a819e00f4390145c0acaabc33bcce8ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/World/DirtPath.png"
-dest_files=[ "res://.import/DirtPath.png-830d51c91a473e9befa2cbc27c4a0426.stex" ]
+source_file="res://Sprites/Player/TesiferWASD.png"
+dest_files=[ "res://.import/TesiferWASD.png-a819e00f4390145c0acaabc33bcce8ba.stex" ]
 
 [params]
 

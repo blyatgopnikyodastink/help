@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "GameWorld",
+"language": "GDScript",
+"path": "res://Scenes/World/GameWorld.gd"
+} ]
+_global_script_class_icons={
+"GameWorld": ""
+}
+
 [application]
 
 config/name="Project Shaven Cat"
@@ -105,6 +115,16 @@ move_right={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777233,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player_collision"
+2d_physics/layer_3="player_attack"
+2d_physics/layer_4="player_hurt"
+2d_physics/layer_5="enemy_collision"
+2d_physics/layer_6="enemy_attack"
+2d_physics/layer_7="enemy_hurt"
 
 [physics]
 

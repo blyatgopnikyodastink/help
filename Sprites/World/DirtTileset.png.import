@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree.png-f8b4230fe2fa3852cb669b9262ea0d50.stex"
+path="res://.import/DirtTileset.png-c981e79fcf43fda49f977b99d3a92ba6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/World/Tree.png"
-dest_files=[ "res://.import/Tree.png-f8b4230fe2fa3852cb669b9262ea0d50.stex" ]
+source_file="res://Sprites/World/DirtTileset.png"
+dest_files=[ "res://.import/DirtTileset.png-c981e79fcf43fda49f977b99d3a92ba6.stex" ]
 
 [params]
 
