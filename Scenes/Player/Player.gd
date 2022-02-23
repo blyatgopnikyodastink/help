@@ -27,8 +27,8 @@ func _physics_process(delta):
 		anim_state.travel("run")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCEL * delta)
 		for area in $SCDetector.get_overlapping_areas():
-			if sign(area.direction.x) == sign(velocity.x) or sign(area.direction.y) == sign(velocity.y):
-				area.change_scene(position)
+			if sign(area.direction.x) == sign(velocity.x) and velocity.x != 0 or sign(area.direction.y) == sign(velocity.y) and velocity.y != 0:
+				area.change_scene(global_position)
 				return
 	else:
 		anim_state.travel("idle")

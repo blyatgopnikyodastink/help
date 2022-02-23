@@ -2,4 +2,4 @@ extends Node2D
 class_name GameWorld
 
 
-export var boundaries: Rect2
+export var size: Vector2

@@ -25,7 +25,7 @@
 extents = Vector2( 32, 160 )
 
 [node name="Test1" instance=ExtResource( 1 )]
-boundaries = Rect2( 0, 0, 512, 320 )
+size = Vector2( 512, 320 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 tile_set = SubResource( 1 )
