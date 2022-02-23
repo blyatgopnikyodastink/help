@@ -26,6 +26,10 @@ func _physics_process(delta):
 		anim_tree.set("parameters/run/blend_position", input_vector)
 		anim_state.travel("run")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCEL * delta)
+		for area in $SCDetector.get_overlapping_areas():
+			if sign(area.direction.x) == sign(velocity.x) or sign(area.direction.y) == sign(velocity.y):
+				area.change_scene(position)
+				return
 	else:
 		anim_state.travel("idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
