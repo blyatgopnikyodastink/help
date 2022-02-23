@@ -11,7 +11,7 @@ func _ready() -> void:
 	change_scene(TITLE)
 
 
-func change_scene(to: String, direction := Vector2.ZERO, player_pos := Vector2.ZERO) -> void:
+func change_scene(to: String, player_pos := Vector2.ZERO, direction := Vector2.ZERO) -> void:
 	var new_scene: Node = load(to).instance()
 	add_child(new_scene)
 	if cur_scene:
@@ -27,11 +27,17 @@ func change_scene(to: String, direction := Vector2.ZERO, player_pos := Vector2.Z
 				else:
 					new_scene.position.y = cur_scene.position.y - new_scene.size.y + OVERLAP_SIZE
 			cur_scene.free()
-			get_tree().get_nodes_in_group("player")[0].global_position = player_pos
+			var player: KinematicBody2D = get_tree().get_nodes_in_group("player")[0]
+			player.global_position = player_pos
+			player.set_cam_limits(Rect2(new_scene.global_position, new_scene.size))
 			cur_scene = new_scene
 		else:
 			cur_scene.free()
 			cur_scene = new_scene
+			if cur_scene is GameWorld:
+				var player: KinematicBody2D = get_tree().get_nodes_in_group("player")[0]
+				player.global_position = player_pos
+				player.set_cam_limits(Rect2(new_scene.global_position, new_scene.size))
 	else:
 		cur_scene = new_scene
 	for scene_changer in get_tree().get_nodes_in_group("scene_changer"):

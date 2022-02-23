@@ -3,3 +3,4 @@ class_name GameWorld
 
 
 export var size: Vector2
+

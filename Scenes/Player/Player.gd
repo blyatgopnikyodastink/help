@@ -35,3 +35,11 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	velocity = move_and_slide(velocity)
+
+
+func set_cam_limits(limits: Rect2) -> void:
+	$Camera2D.limit_left = limits.position.x
+	$Camera2D.limit_top = limits.position.y
+	$Camera2D.limit_right = limits.end.x
+	$Camera2D.limit_bottom = limits.end.y
+	
