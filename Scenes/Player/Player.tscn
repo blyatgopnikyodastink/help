@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player/RunDown.tres" type="Animation" id=2]
@@ -115,6 +115,9 @@ graph_offset = Vector2( -1880, -8.801e-08 )
 radius = 7.0
 height = 12.0
 
+[sub_resource type="CapsuleShape2D" id=21]
+radius = 11.0
+
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 17
@@ -161,5 +164,13 @@ current = true
 smoothing_enabled = true
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="NPCDetector" type="Area2D" parent="."]
+collision_mask = 256
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCDetector"]
+position = Vector2( 0, -13 )
+shape = SubResource( 21 )
 
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

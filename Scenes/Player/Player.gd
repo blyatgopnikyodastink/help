@@ -47,6 +47,26 @@ func _physics_process(delta):
 			pass
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	match state:
+		DEFAULT:
+			if event.is_action_pressed("interact"):
+				for npc in $NPCDetector.get_overlapping_areas():
+					if npc.has_method("interact"):
+						change_state(INACTIVE)
+						npc.interact()
+						return
+
+
+func change_state(new_state: int ) -> void:
+	state = new_state
+	match state:
+		DEFAULT:
+			pass
+		INACTIVE:
+			velocity = Vector2.ZERO
+
+
 func set_cam_limits(limits: Rect2) -> void:
 	$Camera2D.limit_left = limits.position.x
 	$Camera2D.limit_top = limits.position.y
@@ -55,7 +75,7 @@ func set_cam_limits(limits: Rect2) -> void:
 	
 
 func tween_cam_limits(old: Rect2, new: Rect2) -> void:
-	state = INACTIVE
+	change_state(INACTIVE)
 	$Tween.interpolate_property($Camera2D, "limit_left", old.position.x, new.position.x, TWEEN_TIME)
 	$Tween.interpolate_property($Camera2D, "limit_top", old.position.y, new.position.y, TWEEN_TIME)
 	$Tween.interpolate_property($Camera2D, "limit_right", old.end.x, new.end.x, TWEEN_TIME)
@@ -64,5 +84,5 @@ func tween_cam_limits(old: Rect2, new: Rect2) -> void:
 
 
 func _on_Tween_tween_all_completed() -> void:
-	state = DEFAULT
+	change_state(DEFAULT)
 	emit_signal("tween_completed")

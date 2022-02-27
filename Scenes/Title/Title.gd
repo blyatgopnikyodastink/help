@@ -18,7 +18,7 @@ func _on_LoadFile_pressed() -> void:
 
 
 func _on_Options_pressed() -> void:
-	pass # Replace with function body.
+	Options.show()
 
 
 func _on_Quit_pressed() -> void:
